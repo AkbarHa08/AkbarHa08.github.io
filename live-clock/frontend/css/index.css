@@ -1,0 +1,14 @@
+.clock-area{
+    font-family: Alkatra;
+    text-align: center;
+    align-items: center;
+    height: auto;
+}
+
+#info-field{
+    padding-top: 2em;
+}
+
+#actions-field{
+    margin-top: 12em;
+}
