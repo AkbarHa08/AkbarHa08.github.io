@@ -3,6 +3,20 @@
     text-align: center;
     align-items: center;
     height: auto;
+    width: 100%;
+    padding-bottom: 2em;
+}
+
+nav a{
+    font-size: 1.2vw;
+}
+
+.navbar-brand{
+    font-size: 1.5vw;
+}
+
+.clock-area h1{
+    font-size: 6.5vw;
 }
 
 #info-field{
@@ -11,4 +25,8 @@
 
 #actions-field{
     margin-top: 12em;
+}
+
+btn{
+    font-size: 1.5vw;
 }

@@ -3,6 +3,7 @@ var clockField = document.getElementById('clock-field');
 var infoText = document.getElementById('info-text');
 var clockText = document.getElementById('clock-text');
 var dateText = document.getElementById('date-text');
+var clockArea = document.getElementById('clock-area');
 
 var date = new Date;
 
@@ -36,5 +37,10 @@ function setTime(){
 
 setInterval(setTime,1000);
 
+
+function changeTheme(){
+    clockArea.classList.remove("bg-dark");
+    clockArea.classList.add("bg-light");
+}
 
 
