@@ -15,6 +15,7 @@
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
+    user-select: none;
   }
 
   /* Button */
@@ -35,18 +36,22 @@
   }
 
   /* Hidden message */
-  .message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    text-shadow: 0 0 20px rgba(255, 77, 109, 0.7);
-    text-align: center;
-  }
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-shadow: 0 0 20px rgba(255, 77, 109, 0.7);
+  text-align: center;
+
+  /* Add this line to allow clicking elements underneath while hidden */
+  pointer-events: none;
+}
+
 
   /* Heart animation */
   .heart {
@@ -71,7 +76,7 @@
 </head>
 <body>
 
-<button class="love-btn" id="loveButton" onclick="showLove()">Leyla Click Me ❤️</button>
+<input class="love-btn" id="loveButton" onclick="showLove()" type="button" value="Leyla Click Me ❤️">
 <div class="message" id="message">Ureysen ❤️</div>
 
 <script>
