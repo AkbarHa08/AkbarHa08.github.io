@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise ❤️</title>
+<style>
+  /* General styling */
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  /* Button */
+  .love-btn {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
+  }
+  .love-btn:hover {
+    background-color: #ff1e50;
+    transform: scale(1.05);
+  }
+
+  /* Hidden message */
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-shadow: 0 0 20px rgba(255, 77, 109, 0.7);
+    text-align: center;
+  }
+
+  /* Heart animation */
+  .heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 2rem;
+    animation: floatUp 4s linear forwards;
+    opacity: 0.8;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-600px) scale(0.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<button class="love-btn" id="loveButton" onclick="showLove()">Leyla Click Me ❤️</button>
+<div class="message" id="message">Ureysen ❤️</div>
+
+<script>
+function showLove() {
+  // Hide the button after click
+  document.getElementById('loveButton').style.display = 'none';
+
+  // Show the message
+  const message = document.getElementById('message');
+  message.style.opacity = 1;
+
+  // Create floating hearts
+  for (let i = 0; i < 20; i++) {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = '80%';
+    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+    document.body.appendChild(heart);
+
+    // Remove heart after animation
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
+}
+</script>
+
+</body>
+</html>
